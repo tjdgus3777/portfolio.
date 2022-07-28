@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#footer_left h3').click(function(){
+                $('body,html').animate({scrollTop:0})
+            })
+
+
+            $(window).scroll(function(){
+                sc = $(window).scrollTop()
+                if( sc >= $('#about_me').offset().top){
+                $('ul li:nth-child(1) .skill_box1 .skill_box2').animate({'width':'95%'},300)
+                $('ul li:nth-child(2) .skill_box1 .skill_box2').delay(200).animate({'width':'85%'},300)
+                $('ul li:nth-child(3) .skill_box1 .skill_box2').delay(400).animate({'width':'80%'},300)
+                $('ul li:nth-child(4) .skill_box1 .skill_box2').delay(600).animate({'width':'80%'},300)
+                }
+            })
+
+            setInterval(function(){
+                $('#wheel').css({'top':'5px','opacity':'1'})
+                $('#wheel').animate({'opacity':'0','top':'20px'},600)
+
+            },700)
+
+
+
+
+            $('#pon').css({'top':0})
+            $('#pon').animate({'top':700-$('#pon').height()},6000)
+
+            setInterval(function(){
+                $('#pon').css({'top':0})
+                $('#pon').animate({'top':700-$('#pon').height()},6000)
+            },7000)
+        })
+    </script>
+    <style>
+        * { margin: 0; padding: 0; list-style: none; }
+        body,html { height: 100%; }
+        #main { width: 100%; height: 100%; background: url(cat.jpg) center; background-size: cover; position: relative;}
+        #main h1 { width: 100%; text-align: center; color: #fff; font-size: 25px; line-height: 30px; height: 30px; position: absolute; left: 0; top: -100px; bottom: 0; margin: auto; }
+        #main p { width: 100%; text-align: center; line-height: 20px; height: 20px; position: absolute; left: 0; top: 0; bottom: 0; margin: auto; color: #fff;  }
+        #mouse { width: 20px; height: 30px; border-radius: 20px; border: 4px solid #fff; position: absolute; left: 0; right: 0; bottom: 20px; margin: auto;}
+        #wheel { width: 4px; height: 4px; border-radius: 4px; position: absolute; left: 0; right: 0; top: 5px; background-color: #fff; margin: auto; }
+        header { width: 100%; height: 50px; border-top: 1px solid #555; background-color: #000; color: #fff; line-height: 50px; }
+        #logo { float: left; margin-left: 20px; }
+        #menu { float: right; margin-right: 30px; }
+        #menu>li { float: left; margin-left: 15px; }
+        #mobile_menu { width: 20px; height: 20px; float: right; margin-top: 15px; position: relative; margin-right: 30px;}
+        #mobile_menu>li { width: 20px; height: 3px; background-color: #fff; position: absolute; border-radius: 5px; }
+        #mobile_menu>li:nth-child(1) {top: 0; }
+        #mobile_menu>li:nth-child(2) { top: 8px; }
+        #mobile_menu>li:nth-child(3) { top: 17px; }
+        #main_work { width: 100%; padding: 100px 0; background-color: #eee; }
+        #main_work_title { width: 1200px; margin: auto; text-align: center; }
+        #main_work_img { width: 970px; display: block; margin: auto; margin-top: 20px; border-radius: 10px; margin-bottom: 100px;}
+        #main_work_box1 { width: 1200px;  margin: auto; margin-top: 50px; overflow: hidden;position: relative; z-index: 999; }
+        #main_work_box1_left { width: 40%; height: 300px; float: left;}
+        #main_work_box1_right { width: 55%; height: 300px; text-align: left; float: right; }
+        #main_work_box1_right img { width: 220px; margin-top: 30px;}
+        #main_work_box1_right p { margin-top: 40px; }
+        #main_work_box1_right button { width: 150px; height: 33px; border-radius: 15px; background-color: yellow; float: left; border: none; margin-left: 90px; margin-top: 20px;}
+        #main_work_box2 {width: 1200px; margin-top: 50px; overflow: hidden; padding: 20px; margin-left: -20px; margin: auto;}
+        #main_work_box2_left { width: 70%; margin-right: 5%; float: left; }
+        
+        #main_work_box2_left>div { margin-top: 50px; text-align: left;}
+        #main_work_box2_left>div h3 { font-size: 30px; line-height: 60px; }
+        #main_work_box2_left>div ul li { float: left; }
+        #main_work_box2_left>div p { clear: both; }
+        #main_work_font {  }
+        #main_work_font ul>li h4 { font-size: 20px; margin-right: 30px;}
+        #main_work_font ul>li h5 { margin-right: 10px;  font-size: 17px; font-weight: 300; margin-top: 15px; margin-bottom: 20px;}
+
+        #main_work_colors {  }
+        #main_work_colors ul li div { width: 208px; height: 20px; }
+        #main_work_colors ul li:nth-child(1) div { background-color: #000; }
+        #main_work_colors ul li:nth-child(2) div { background-color: #fedc00; }
+        #main_work_colors ul li:nth-child(3) div { background-color: #fff; }
+        #main_work_colors ul li:nth-child(4) div { background-color: #ddd; }
+        #main_work_colors ul li h5 { font-weight: 300; font-size: 16px; margin-top: 5px; margin-bottom: 20px;}
+
+        #main_work_icons {  }
+        #main_work_icons ul li img { width: 20px; height: 20px; margin-top: 20px; margin-right: 20px; }
+        
+        #main_work_box2_right { width: 25%; height: 700px; float: right; background-color: yellow; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); position: relative; overflow: hidden;
+        border-radius: 15px;}
+        #main_work_box2_right ul { width: 300px;  }
+        #pon { width: 100%; position: absolute;}
+
+        #responsive { width: 1024px; margin: auto; margin-top: 100px; text-align: center;}
+        #responsive h3 { line-height: 50px; }
+        #responsive p { margin-top: 10px; }
+        #responsive ul { overflow: hidden; margin-top: 100px;}
+        #responsive ul li { width: 46%; height: 350px; margin: 2%; float: left; border-radius: 20px; background-color: #fff;box-sizing: border-box; position: relative; border: 10px solid #fff;}
+        #responsive ul li:hover { background-color: #eee; border: 10px solid #eee; }
+        .pc { width: 100%; position: absolute; left: 0; bottom: 30%; border-radius: 10px; overflow: hidden;  }
+        .tablet { width: 50%; position: absolute; left: 5%; bottom: 0; }
+        .mobile { width: 20%; position: absolute; right: 5%; bottom: 0; border-radius: 10px;}
+        #responsive ul li button { width: 120px; height: 30px; background-color: #000; color: #fff; border-radius: 30px; border: none; position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto;display: none; 
+         transition: 0.3s;}
+        #responsive ul li:hover button { display: inline;}
+        #responsive ul li button:hover {background-color: #ddd; color: #000;}
+        #pc_work { width: 100%; padding: 100px 0; background-color: #eee; text-align: center;}
+        #pc_work ul { width: 1276px; margin: auto; overflow: hidden; margin-top: 100px;}
+        #pc_work ul li { width: 31.333%; margin: 1%; float: left; position: relative; border-radius: 20px; background-color: #000;}
+        #pc_work ul li:hover img { opacity: 0.5; }
+        #pc_work ul li button:hover { background-color: #000; color: #fff; border: none; }
+        #pc_work ul li:hover button { display: inline; }
+        #pc_work ul li img { width: 100%; vertical-align: top; border-radius: 20px;}
+        #pc_work ul li button {display: none; background: transparent; width: 100px; height: 30px; border-radius: 15px; border: 1px solid #fff; color: #fff; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;}
+    
+        #about_me { width: 1024px; margin: auto; margin-top: 100px; text-align: center; padding-bottom: 200px;}
+        #about_me_box1 {  }
+        #about_me_img { width: 190px; height: 193px; }
+        #about_me_box1 { overflow: hidden; border-top: 1px solid #ddd; margin-top: 30px;}
+        #about_me_box1_left { width: 46%; margin: 2%; float: left;}
+        #about_me_box1_left h4 { text-align: left; margin-bottom: 20px; }
+        #about_me_box1_left table { width: 100%; height: 200px; text-align: left;}
+        #about_me_box1_right { width: 46%; margin: 2%; float: left; }
+        #about_me_box1_right ul {}
+        #about_me_box1_right ul li { width: 100%; height: 50px; }
+        #about_me_box1_right ul li h5 { float: left; line-height: 30px; font-size: 15px; font-weight: 400;}
+        #about_me_box1_right ul li h6 { float: right; line-height: 30px; font-size: 16px; font-weight: 500;}
+        #about_me_box1_right ul li .skill_box1 { width: 100%; clear: both; background-color: #ddd; height: 11px; position: relative; }
+        #about_me_box1_right ul li .skill_box2 { width: 0%; background: linear-gradient(to right,#999,#000); height: 11px;  position: absolute;}
+
+
+        #about_me_box1_right h4 { text-align: left; margin-bottom: 20px; }
+        #about_me_box2 { border-top: 1px solid #ddd; padding:0 20px; box-sizing: border-box; margin-top: 30px;}
+        #about_me_box2 h4 { text-align: left; font-size: 19px; color: #333; margin-bottom: 15px;}
+        #about_me_box2 p { text-align: justify; font-size: 15px;}
+
+        #contact { width: 100%; padding: 150px 0; background: url(pexels-gabriel-crişan-2119953.jpg) center top no-repeat fixed; color: #fff;}
+        #contact h3 { text-align: center; font-size: 19px; font-weight: 700; }
+        #contact ul { width: 1024px; overflow: hidden; margin: auto; text-align: center; margin-top: 20px;} 
+        #contact ul li { width: 28.333%; padding: 30px 0; float: left; box-sizing: border-box; border-right: 1px solid #eee; }
+        #contact ul li:nth-child(2) { width: 43.333%; }
+        #contact ul li:last-child { border: none; }
+        footer { width: 100%; background-color: #fff; overflow: hidden; }
+        #footer_left { width: 50%;  float: left; line-height: 50px;}
+        #footer_right { width: 50%; float: right; text-align: right; }
+        
+    </style>
+    <style>
+        @media all and (min-width:320px){  /* 320~767 모바일 */
+            #menu { display: none; }
+            #mobile_menu { display: block; }
+            #main_work_title {width: 100%;}
+            #main_work_img { width: 95%; }
+            #main_work_box1 { width: 100%; overflow: none; }
+            #main_work_box1_right { width: 96%; text-align: center; margin: 2%;}
+            #main_work_box1_right p { text-align: justify; }
+            #main_work_box1_right button { margin-left: 160px; margin-top: 0;}
+            #main_work_box1_left { display: none; }
+
+            #main_work_box2 { width: 95%;}
+            #main_work_box2_right { display: none; }
+            #main_work_box2_left { width: 100%; }
+            #main_work_colors ul li div { width: 107px; height: 18px;margin-right: 2px; }
+            #main_work_box2_left p { font-size: 14px; }
+
+
+
+            #responsive { width: 90%; }
+            #responsive ul li { width: 96%; margin: 2; height: 65vw; }
+            #pc_work ul { width: 90%; }
+            #pc_work ul li { width: 48%; }
+            #about_me { width: 100%; }
+            #about_me_box1_left { width: 90%; margin: 5%;}
+            #about_me_box1_right { width: 90%; margin: 5%; }
+            #contact { width: 100%;  } 
+            #contact ul { width: 100%; }
+            #footer_left { width: 100%; }
+            #footer_right { width: 100%; }  
+         }
+        @media all and (min-width:768px){ /* 768~1023 태블릿*/  
+            #menu { display: block; }
+            #mobile_menu { display: none; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #main_work_box2 { width: 95%; }
+            #main_work_box2_right { display: block; width: 25%;}
+            #main_work_box2_left { width: 70%; }
+            #main_work_colors ul li div { width: 107px; height: 18px;margin-right: 2px; }
+            #main_work_box2_left p { font-size: 14px; }
+
+
+
+
+
+            #responsive { width: 90%; }
+            #responsive ul li { width: 46%; margin: 2%; height: 30vw; }
+            #pc_work ul { width: 90%; }
+            #pc_work ul li { width: 31.333%; }
+            #about_me { width: 1024px; }
+            #about_me_box1_left { width: 46%; margin: 2%;}
+            #about_me_box1_right { width: 46%; margin: 2%; }
+            #contact { width: 100%;  } 
+            #contact ul { width: 98%; }
+            #footer_left { width: 40%; }
+            #footer_right { width: 60%; }  
+        }
+        @media all and (min-width:1024px){ /* 1024~1599 노트북*/
+            #menu { display: block; }
+            #mobile_menu { display: none; }
+
+
+            #main_work_title {width: 1200px;}
+            #main_work_img { width: 970px; }
+            #main_work_box1 { width: 1200px; margin: auto; }
+            #main_work_box1_right { width: 55%; text-align: left; margin: 0;}
+            #main_work_box1_right p { text-align: center; }
+            #main_work_box1_right button { margin-left: 90px; margin-top: 20px;}
+            #main_work_box1_left { display: block; }
+
+
+
+
+
+
+
+
+            #main_work_box2 { width: 1200px; }
+            #main_work_box2_right { display: block; width: 25%;}
+            #main_work_box2_left { width: 70%; }
+            #main_work_colors ul li div { width: 208px; height: 20px;margin-right: 0; }
+            #main_work_box2_left p { font-size: 14px; }
+
+
+
+
+
+
+            #responsive { width: 1024px; }
+            #responsive ul li { width: 46%; margin: 2%; height: 350px; }
+            #pc_work ul { width: 1276px; }
+            #pc_work ul li { width: 31.333%; }
+            #about_me { width: 1024px; }
+            #about_me_box1_left { width: 46%; margin: 2%;}
+            #about_me_box1_right { width: 46%; margin: 2%; }
+            #contact { width: 100%;  } 
+            #contact ul { width: 1024px; }
+            #footer_left { width: 50%; }
+            #footer_right { width: 50%; }  
+         }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Hello!</h1>
+        <p>Web publisher OOO <br>
+        ul / ux designer</p>
+        <div id="mouse">
+            <div id="wheel"></div>
+        </div>
+    </div>
+    <!--  -->
+    <header>
+        <h2 id="logo">OOO</h2>
+        <ul id="menu">
+            <li>Home</li>
+            <li>Main</li>
+            <li>Responsive</li>
+            <li>Pc.ver</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <ul id="mobile_menu">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </header>
+
+    <div id="main_work">
+        <div id="main_work_title">
+        <h3>Main work</h3>
+        <p>From design planning <br>
+            to CSS, JAVASCRIPT, JQUEARY, 100% handmade
+        </p>
+        </div>
+        <img src="images/pc_img.jpg" alt="" id="main_work_img">
+        <div id="main_work_box1">
+            <img src="images/ipad.png" alt="" id="main_work_box1_left">
+            <div id="main_work_box1_right">
+                <img src="images/main_logo_b.png" alt="" id="main_work_box1_logo">
+                <p>평소 여행과 동물에 관심이 많아 이 둘이 결합된 [National Geographic]을 주제로 선정
+                    하여 디자인 기획부터 css, Jquery, Javascript, Plug in 작업을 통해 기존에 없던 새로
+                    운 싸이트를 구현했습니다. 마우스 스크롤, 드래그, 클릭 동작에 중점을 두었고 서브페
+                    이지 작업으로 페이지간 이동이 가능하며 반응형으로 제작되어 어느 기기에서나 편안
+                    한 이용 및 감상이 가능합니다.</p>
+                <button>Let`s see !</button>
+            </div>
+        </div>
+        <div id="main_work_box2">
+            <div id="main_work_box2_left">
+                <div id="main_work_font">
+                    <h3>fonts</h3>
+                    <ul>
+                        <li>
+                            <h4>National <br>
+                                Geographic</h4>
+                            <h5>Nanum Gothic</h5>
+                        </li>
+                        <li>
+                            <h4>National <br>
+                                Geographic</h4>
+                            <h5>Roboto</h5>
+                        </li>
+                        <li>
+                            <h4>National <br>
+                                Geographic</h4>
+                            <h5>Roboto Slab</h5>
+                        </li>
+                    </ul>
+                    <p>전체적으로 깔끔한 느낌의 폰트 사용, Roboto slab 폰트로 포인트를 주었습니다.</p>
+                </div>
+                <div id="main_work_colors">
+                    <h3>colors</h3>
+                    <ul>
+                        <li>
+                            <div></div>
+                            <h5>#000</h5>
+                        </li>
+                        <li>
+                            <div></div>
+                            <h5>#fedc00</h5>
+                        </li>
+                        <li>
+                            <div></div>
+                            <h5>#fff</h5>
+                        </li>
+                        <li>
+                            <div></div>
+                            <h5>#ddd</h5>
+                        </li>
+                    </ul>
+                    <p>National Geographic의 심볼컬러를 메인으로 사용하여 고유의 느낌을 전달하고자 하였으며,
+                        사용된 이미지를 방해하지 않는 무채색 컬러를 선택하여 사용하였습니다.</p>
+                </div>
+                <div id="main_work_icons">
+                    <h3>icons</h3>
+                    <ul>
+                        <li><img src="icons/arrowbt_gray_r.png" alt=""></li>
+                        <li><img src="icons/arrowbt_black_l.png" alt=""></li>
+                        <li><img src="icons/scroll_down_b.png" alt=""></li>
+                        <li><img src="icons/scroll_top_b.png" alt=""></li>
+                        <li><img src="icons/section3_mobile_gray_r.png" alt=""></li>
+                        <li><img src="icons/section3_mobile_black_l.png" alt=""></li>
+                    </ul>
+                    <p>무채색의 아이콘을 사용하여 집중도는 물론 이미지간의 조화를 완성했습니다.</p>
+                </div>
+            </div>
+            <div id="main_work_box2_right">
+                <ul>
+                    <li><img src="images/phone_img.jpg" alt="" id="pon"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div id="responsive">
+        <h3>Responsive Web</h3>
+        <p>It's a little bit, but I've done some responsive work</p>
+        <ul>
+            <li><img src="images/bts.jpg" alt="" class="pc">
+                <img src="images/bts_ipad2.png" alt="" class="tablet">
+                <img src="images/bts_iphone2.png" alt="" class="mobile">
+                <button>BTS</button>
+            </li>
+            <li><img src="images/samsungpay.jpg" alt="" class="pc">
+                <img src="images/samsungpay_ipad.png" alt="" class="tablet">
+                <img src="images/samsungpay_iphone.png" alt="" class="mobile">
+                <button>SAMSUNG PAY</button>
+            </li>
+        </ul>
+    </div>
+    <div id="pc_work">
+        <h3>Pc version works</h3>
+        <p>First work is my representative portfolio. <br>
+            And besides this work, I’m looking forward for new projects and opportunities.</p>
+            <ul>
+                <li><img src="images/1.jpg" alt=""><button>FORD</button></li>
+                <li><img src="images/2.jpg" alt=""><button>COFFEEBEAN</button></li>
+                <li><img src="images/3.jpg" alt=""><button>KONACARD</button></li>
+                <li><img src="images/4.jpg" alt=""><button>LANIEGE</button></li>
+                <li><img src="images/5.jpg" alt=""><button>LUSH</button></li>
+                <li><img src="images/6.jpg" alt=""><button>RADISSON</button></li>
+            </ul>
+    </div>
+    <div id="about_me">
+        <h3>About Me</h3>
+        <img src="images/icon.png" alt="" id="about_me_img">
+        <h4>web, ux/ui designer <br> OOO</h4>
+        <div id="about_me_box1">
+            <div id="about_me_box1_left">
+                <h4>liscence</h4>
+                <table>
+                    <tr>
+                        <td>웹디자인기능사</td>
+                        <td>2021.07</td>
+                    </tr>
+                    <tr>
+                        <td>컴퓨터그래픽스운용기능사</td>
+                        <td>2021.07</td>
+                    </tr>
+                    <tr>
+                        <td>GTQ 1급</td>
+                        <td>2021.06</td>
+                    </tr>
+                    <tr>
+                        <td>GTQ 일러스트 1급</td>
+                        <td>2021.05</td>
+                    </tr>
+                    <tr>
+                        <td>자동차운전면허</td>
+                        <td>2014.01</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="about_me_box1_right">
+                <h4>skills</h4>
+                <ul>
+                    <li>
+                        <h5>Photoshop</h5>
+                        <h6>95%</h6>
+                        <div class="skill_box1">
+                            <div class="skill_box2"></div>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <h5>Illustrator</h5>
+                        <h6>85%</h6>
+                        <div class="skill_box1">
+                            <div class="skill_box2"></div>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <h5>html5 & css3</h5>
+                        <h6>80%</h6>
+                        <div class="skill_box1">
+                            <div class="skill_box2"></div>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <h5>Java script</h5>
+                        <h6>80%</h6>
+                        <div class="skill_box1">
+                            <div class="skill_box2"></div>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="about_me_box2">
+            <h4>introduction</h4>
+            <p>안녕하세요! 앞으로의 업무역량을 확장하고자 새롭게 퍼플리싱에 도전해 웹표준 html5, css, Jquery, javascript를 익혔으며 젠코딩과 하드코딩 및 반응형 작업을 할 수 있습니다. 웹디자이너 업무 중 해결할 수 없어 답답하고 궁금해왔던것을 배우게 되니 새롭고 흥미로워 열심히 임했습니다. 포트폴리오 최상단 메인작업의 경우 디자인기획부터 script 동작에 이르기까지 최선을 다해 완성했습니다. 지금까지 쌓아온 디자이너 경험을 바탕삼아 앞으로 웹퍼블리셔로서 또 디자이너로서 멋지게 활동할것을 확신합니다.</p>
+        </div>
+    </div>
+    <div id="contact">
+        <h3>Contact Me</h3>
+        <ul>
+            <li>
+                <p>OOO<br>010-0000-0000</p>
+            </li>
+            <li>
+                <p>Republic of Korea<br>Uijeongbu dong, Uijeongbu-si, Gyeonggi-do</p>
+            </li>
+            <li>
+                <p>mail<br>0000@nate.com</p>
+            </li>
+        </ul>
+    </div>
+    <!--  -->
+    <footer>
+        <div id="footer_left">
+            <h3>OOO</h3>
+        </div>
+        <div id="footer_right">
+            <p>OOO 2021 copyright @ ALL RIGHTS RESERVED. <br>
+                creating modern and responsive design for Web and Mobile</p>
+        </div>
+    </footer>
+</body>
+</html>
